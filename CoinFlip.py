@@ -1,7 +1,7 @@
 #Generate coin flips for krark
-from math import nan
+#from math import nan
 import random
-
+from KrarkSupport import KrkAux
 #import tkinter as tk
 #from string import ascii_letters
 
@@ -13,7 +13,8 @@ print("Heads resolves the spell copy.\nTails puts it back in my hand.")
 #Gather input on how many flips we're doing
 while True:
     try:
-        krkq = int(input("How many Krark flips? "))
+        krkq = range(int(input("How many Krarks? ")))
+        krkq2 = int(input("How many Harmonic Prodigies? "))
         print(spacer)
     except ValueError:
         print("Value is nan, please enter a number!")
@@ -21,7 +22,8 @@ while True:
     else:
         print("Coin flips resolve\nfrom top to bottom")
         print(spacer)
-        for each in range(krkq):
+        totalFlips = KrkAux.HarmProd(krkq,krkq2)
+        for each in range(totalFlips):
             print(coin[random.randint(0,1)])
         print(spacer)
         krkq2 = str(input("Flip again? (y/n) "))
