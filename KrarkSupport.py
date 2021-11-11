@@ -20,5 +20,8 @@ class KrkAux:
         for each in totalKrk:
             totalHarm.append(each + HarmNum)
         return sum(totalHarm)
+
+    def Scoundrel(coin):
+        return coin.count("Heads")*2
                 
                 
